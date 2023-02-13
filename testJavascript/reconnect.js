@@ -5,7 +5,7 @@ var amqp = require('amqplib/callback_api');
 // To get COREDNS record for cluster, kubectl get configmaps --namespace=kube-system coredns -o yaml
 var amqpConn = null;
 function start() {
-  amqp.connect("amqp://admin:kesc@118@rabbitmq.rabbitmq.svc.cluster.local:5672" + "?heartbeat=60", function(err, conn) {
+  amqp.connect("amqp://admin:kesc@118@rabbitmq.ahsan.svc.cluster.local:5672" + "?heartbeat=60", function(err, conn) {
     if (err) {
       console.error("[AMQP]", err.message);
       return setTimeout(start, 1000);

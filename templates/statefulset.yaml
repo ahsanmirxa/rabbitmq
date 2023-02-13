@@ -28,6 +28,10 @@ spec:
 {{ toYaml .Values.podAnnotations | indent 8 }}
       {{- end }}
     spec:
+      hostAliases:
+      - ip: 10.0.0.1
+        hostnames:
+        - kubernetes.default.svc.cluster.local
       {{- if .Values.image.pullSecrets }}
       imagePullSecrets:
       {{- range .Values.image.pullSecrets }}
